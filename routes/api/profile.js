@@ -94,7 +94,7 @@ router.post('/', [auth, [ // Multiple middleware are sent as an array of middlew
 
     if (profile) {
       // Update
-      profile = await Profile.findOneUpdate({
+      profile = await Profile.findOneAndUpdate({
         user: req.user.id
       }, {
         $set: profileFields
